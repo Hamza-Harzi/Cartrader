@@ -1,6 +1,7 @@
 <script setup>
 definePageMeta({
-  layout: "custom",
+  layout: "custom", // ahna 3amlin folder esmo layout 3malna fih file esmo custom fih css mou3ayen n3aytoulo win nestha9ouh
+  // nesta3mlo l middleware bich nehmiw l route wela les page mte3na maynajem yode5lelhom ken ma ya3mel login
 });
 
 const { listings } = useCars();
@@ -10,20 +11,10 @@ const { listings } = useCars();
   <div>
     <div class="flex justify-between mt-24 items-center">
       <h1 class="text-6xl">My Listings</h1>
+      <!-- ki n9oulo hakka to="/profile/listings/create" ma3neha bich thezna li lien hedha http://localhost:3000/profile/listings/create  -->
       <NuxtLink
         to="/profile/listings/create"
-        class="
-          w-9
-          h-9
-          bg-blue-400
-          flex
-          justify-center
-          items-center
-          rounded-full
-          text-white
-          font-bold
-          cursor-pointer
-        "
+        class="w-9 h-9 bg-blue-400 flex justify-center items-center rounded-full text-white font-bold cursor-pointer"
         >+</NuxtLink
       >
     </div>

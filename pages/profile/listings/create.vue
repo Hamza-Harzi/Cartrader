@@ -1,6 +1,7 @@
 <script setup>
 definePageMeta({
   layout: "custom",
+  // nesta3mlo l middleware bich nehmiw l route wela les page mte3na maynajem yode5lelhom ken ma ya3mel login
 });
 
 const { makes } = useCars();
@@ -63,7 +64,6 @@ const inputs = [
   },
 ];
 </script>
-
 
 <template>
   <div>
