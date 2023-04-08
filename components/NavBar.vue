@@ -1,6 +1,10 @@
 <script setup>
 const user = useSupabaseUser();
 const supabase = useSupabaseClient();
+
+const Login = () => {
+  navigateTo("/login");
+};
 // in logout func we will do 1-make user.value = null 2- romove jwt from cokies browser 3- navigate to homepage
 const Logout = async () => {
   //1-make user.value = null
@@ -33,6 +37,10 @@ const Logout = async () => {
       <NuxtLink class="mr-5" to="/profile/listings">Profile</NuxtLink>
       <p class="cursor-pointer" @click="Logout">Logout</p>
     </div>
-    <NuxtLink v-else class="/login">Login</NuxtLink>
+    <NuxtLink v-else class="/login"
+      ><button @click="Login">Login</button>
+    </NuxtLink>
   </header>
 </template>
+
+<!-- http://localhost:3001/login -->
