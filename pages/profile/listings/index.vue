@@ -4,7 +4,19 @@ definePageMeta({
   // nesta3mlo l middleware bich nehmiw l route wela les page mte3na maynajem yode5lelhom ken ma ya3mel login
 });
 
-const { listings } = useCars();
+const user = useSupabaseUser();
+// const { listings } = useCars();
+const { data: listings, refresh } = await useFetch(
+  // bich l7ajet li ena 3maltelhom create w mchew lil base de donnee nal9ahom fi l client
+  `/api/car/listings/user/${user.value.id}`
+);
+
+const handleDelete = async (id) => {
+  await $fetch(`/api/car/listings/${id}`, {
+    method: "delete",
+  });
+  listings.value = listings.value.filter((listing) => listing.id !== id);
+};
 </script>
 
 <template>
@@ -23,6 +35,7 @@ const { listings } = useCars();
         v-for="listing in listings"
         :key="listing.id"
         :listing="listing"
+        @delete-click="handleDelete"
       />
     </div>
   </div>
