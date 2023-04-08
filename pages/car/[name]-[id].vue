@@ -13,7 +13,6 @@ definePageMeta({
 </script>
 <template>
   <div>
-    {{ user.id }}
     <CarDetailHero :car="car" />
     <CarDetailAttributes :features="car.features" />
     <CarDetailDescription :description="car.description" />
